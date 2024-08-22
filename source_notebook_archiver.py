@@ -1,5 +1,5 @@
 """Use nbconvert to generate pdfs of an assignment.
-    
+
 """
 
 import os
@@ -21,7 +21,7 @@ opener = """
 <!DOCTYPE html>
 <html>
 <head></head>
-<body><h1 style="text-align: center">ES302 FA22 Released Materials</h1>
+<body><h1 style="text-align: center">ES302 FA24 Released Materials</h1>
 <p style="text-align: center"> Last Updated:    """+str(date_time)+"""</p>
 <div style="border: solid 2px black; border-radius: 10px; text-align: center; width: 50vw;margin-left: auto; margin-right: auto">
 <br><br>
@@ -61,7 +61,7 @@ def main():
     docdir = os.path.relpath("./docs")
     for root, dirs, files in os.walk(source_dir):
         dirs.sort(key=lambda word: [alphabet.index(c) for c in word])
-        
+
         for file in files:
             rel_dir = os.path.relpath(root, source_dir)
             if((rel_dir != last_rel_dir) and '.' not in rel_dir and 'devel' not in rel_dir and 'templates' not in rel_dir and 'docs' not in rel_dir):
@@ -102,7 +102,7 @@ def main():
     findex.write(closer)
     findex.close()
 
-                
+
 
 
 if __name__ == "__main__":
