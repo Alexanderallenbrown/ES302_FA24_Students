@@ -19,7 +19,7 @@ let orderDisplay;
 let zyx = true;
 
 function preload() {
-  font = loadFont('/Inconsolata.otf');
+  font = loadFont('Inconsolata.otf');
 }
 
 function setup() {
