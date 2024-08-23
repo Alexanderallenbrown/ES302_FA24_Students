@@ -64,13 +64,13 @@ def main():
 
         for file in files:
             rel_dir = os.path.relpath(root, source_dir)
-            if((rel_dir != last_rel_dir) and '.' not in rel_dir and 'devel' not in rel_dir and 'templates' not in rel_dir and 'docs' not in rel_dir and not "figures" in rel_dir):
+            if((rel_dir != last_rel_dir) and '.' not in rel_dir and 'devel' not in rel_dir and 'templates' not in rel_dir and 'docs' not in rel_dir and not "figures" and not "slides" in rel_dir):
                 if('A'==file[0] and last_section=='Resources'):
                     last_section = 'Assignments'
                     findex.write("<h2><u>Assignments</u></h2>\r\n")
                 findex.write("<h3 style='text-align: center'>"+str(rel_dir)+"</h3>\r\n")
                 last_rel_dir = rel_dir
-            if file.endswith(".ipynb") and not "checkpoint" in file and not "devel" in rel_dir and not "figures" in rel_dir:
+            if file.endswith(".ipynb") and not "checkpoint" in file and not "devel" in rel_dir and not "figures" in rel_dir and not "slides" in rel_dir:
                 # print(rel_dir,file)
                 dst = os.path.join(docdir,rel_dir)
                 convertcmdpre = "jupyter nbconvert "+"--execute --allow-errors --to html_toc --template templates/source_nb.tpl --output-dir "+dst+" "+os.path.join(rel_dir.replace(" ","\ "),file.replace(" ","\ "))
