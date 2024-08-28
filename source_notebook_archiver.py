@@ -41,7 +41,7 @@ closer = """
 
 findex.write(opener)
 
-alphabet = "._ !0123456789MWFABCDEGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz"
+alphabet = "._ !0123456789MWFABCDEGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz?"
 
 
 def set_permissions(path, uid, gid):
@@ -60,7 +60,8 @@ def main():
     source_dir = os.path.abspath(".")
     docdir = os.path.relpath("./docs")
     for root, dirs, files in os.walk(source_dir):
-        dirs.sort(key=lambda word: [alphabet.index(c) for c in word])
+        # dirs.sort(key=lambda word: [alphabet.index(c) for c in word])
+        dirs.sort()
 
         for file in files:
             rel_dir = os.path.relpath(root, source_dir)
