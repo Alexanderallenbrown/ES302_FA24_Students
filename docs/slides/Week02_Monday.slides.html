@@ -7531,6 +7531,53 @@ git<span class="w"> </span>submodule<span class="w"> </span>update
 </div>
 </div>
 </div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=88826c65">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Writing-functions-in-Python">Writing functions in Python<a class="anchor-link" href="#Writing-functions-in-Python">¶</a></h2><p>A python function takes the following form:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span><span class="n">input2</span><span class="p">,</span><span class="n">optional_input</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="c1">#code that uses the variables passed via the inputs to do something</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">input1</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">input2</span><span class="o">*</span><span class="n">input1</span><span class="o">+</span><span class="n">optional_input</span>
+    <span class="n">result2</span> <span class="o">=</span> <span class="n">input1</span><span class="o">*</span><span class="n">log</span><span class="p">(</span><span class="n">input2</span><span class="p">)</span>
+    <span class="c1">#"return" the final thing or things you'd like to give back to the user of the function.</span>
+    <span class="c1">#your function does not HAVE to return anything!!</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">,</span><span class="n">result2</span>
+</pre></div>
+<p>You can then <strong>use</strong> this function in code anywhere <em>after</em> its first definition.</p>
+<div class="highlight"><pre><span></span><span class="n">squirrel</span><span class="p">,</span> <span class="n">rabbit</span> <span class="o">=</span> <span class="n">myFunction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=70c25b76">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="A-function-that-makes-the-robot-go-forward-might-look-like-this:">A function that makes the robot go forward might look like this:<a class="anchor-link" href="#A-function-that-makes-the-robot-go-forward-might-look-like-this:">¶</a></h2><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">romiGoForward</span><span class="p">(</span><span class="n">speed</span><span class="p">):</span>
+    <span class="n">romi</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span><span class="n">speed</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+<p>This function returns nothing, and takes the Romi and a desired speed as arguments.</p>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6193709f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="The-%22while%22-loop-in-a-Webots-controller-that-uses-this-function-might-look-like-this:">The "while" loop in a Webots controller that <em>uses</em> this function might look like this:<a class="anchor-link" href="#The-%22while%22-loop-in-a-Webots-controller-that-uses-this-function-might-look-like-this:">¶</a></h2><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">romi</span><span class="o">.</span><span class="n">simromi</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">romiGoForward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+</pre></div>
+<p>That's it! Other "extras," like keeping track of the simulation time, may be helpful for sequencing different behaviors of the Romi using "if" statements.</p>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb4cb9dc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
