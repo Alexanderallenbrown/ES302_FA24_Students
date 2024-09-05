@@ -30,6 +30,8 @@ opener = """
 <h2 style="text-align: center"> TextBook</h2>
 <h3><a href="https://drive.google.com/file/d/1765a7bTY-nYGvFJMP41YahOQEy6gtGxN/view?usp=drive_link">Introduction to Autonomous Robots</a></h3>
 <p>By: Correll, Nikolaus and Hayes, Bradley, and Heckman, Christoffer, and Roncone, Alessandro</p>
+
+<h3><a href="https://alexanderallenbrown.github.io/ES302_FA24_Students/lecture_slides.html"> Lecture Slides </a></h3>
 """
 
 closer = """
@@ -72,6 +74,10 @@ def main():
                 findex.write("<h3 style='text-align: center'>"+str(rel_dir)+"</h3>\r\n")
                 last_rel_dir = rel_dir
             if file.endswith(".ipynb") and not "checkpoint" in file and not "devel" in rel_dir and not "figures" in rel_dir and not "slides" in rel_dir:
+                if('A01' in file):
+                    print("writing assignments heading:")
+                    findex.write("<h2><u>Assignments</u></h2>\r\n")
+                    # findex.write("<h3 style='text-align: center'>"+str(rel_dir)+"</h3>\r\n")
                 # print(rel_dir,file)
                 dst = os.path.join(docdir,rel_dir)
                 convertcmdpre = "jupyter nbconvert "+"--execute --allow-errors --to html_toc --template templates/source_nb.tpl --output-dir "+dst+" "+os.path.join(rel_dir.replace(" ","\ "),file.replace(" ","\ "))
