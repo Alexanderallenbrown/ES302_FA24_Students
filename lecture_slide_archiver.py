@@ -63,7 +63,7 @@ def main():
             if file.endswith(".ipynb") and not "checkpoint" in file and "slides" in rel_dir:
                 dst = os.path.join(docdir,rel_dir)
                 # convertcmdpre = "jupyter nbconvert "+"--execute --allow-errors --to html_toc --template templates/source_nb.tpl --output-dir "+dst+" "+os.path.join(rel_dir.replace(" ","\ "),file.replace(" ","\ "))
-                convertcmdpre = "jupyter nbconvert --to slides   --no-input --no-prompt --output-dir " +dst+" "+os.path.join(rel_dir.replace(" ","\ "),file.replace(" ","\ "))
+                convertcmdpre = "jupyter nbconvert --to slides --SlidesExporter.reveal_scroll=True  --no-input --no-prompt --output-dir " +dst+" "+os.path.join(rel_dir.replace(" ","\ "),file.replace(" ","\ "))
                 os.system(convertcmdpre)
                 #modify links inside thie html file
                 # Read in the file

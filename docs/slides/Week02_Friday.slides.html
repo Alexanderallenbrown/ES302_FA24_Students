@@ -7453,7 +7453,7 @@ main {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=557a2d2b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2858a073">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7463,22 +7463,32 @@ main {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7056823a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=380a97f7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Often, we need to keep track of how long an FSM has been in a state, or how long a certain input has been true. We will often want to use an "elapsed time" to trigger a state transition. To do this we need:</p>
 <ol>
-<li>A "start time" variable in seconds or milliseconds that "saves" the instant that we "turn the timer on" to begin counting</li>
-<li>An "elapsed time" variable that keeps track of time <em>since</em> the start time, e.g. <code>elapsed=current_time-starttime</code></li>
+<li>A "start time" variable in seconds or milliseconds that "saves" the instant that we "turn the timer on" to begin counting, e.g.</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">notCounting</span><span class="p">):</span>
+    <span class="n">starttime</span> <span class="o">=</span> <span class="n">current_time</span>
+</pre></div>
+<p>(note that this stops updating the start time once we <em>are</em> counting!)
+2. An "elapsed time" variable that keeps track of time <em>since</em> the start time, e.g.</p>
+<div class="highlight"><pre><span></span><span class="n">elapsed</span><span class="o">=</span><span class="n">current_time</span><span class="o">-</span><span class="n">starttime</span>
+</pre></div>
+<ol start="3">
 <li>A Boolean variariable that is True when enough time has passed, and False otherwise.</li>
 </ol>
+<div class="highlight"><pre><span></span><span class="n">status</span> <span class="o">=</span> <span class="n">elapsed</span> <span class="o">&gt;=</span> <span class="n">some_preset_amount_of_time</span>
+</pre></div>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=17ee58d8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dc658d91">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7488,7 +7498,7 @@ main {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0302b6b9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7201d4fb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7497,20 +7507,20 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=de451213">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=7920e8dd">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<iframe height="600" id="inlineFrameExample" src="http://alexanderallenbrown.github.io/ES302_FA24_Students/03_FiniteStateMachines/03_FiniteStateMachines.html#Timers" title="Inline Frame Example" width="1000"> </iframe>
+<iframe height="600" id="inlineFrameExample" src="https://alexanderallenbrown.github.io/ES302_FA24_Students/03_FiniteStateMachines/03_FiniteStateMachines.html#Timers" title="Inline Frame Example" width="1000"> </iframe>
 </div>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=45fd6d09">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0036b213">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7520,7 +7530,7 @@ main {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=de179a67">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=057f7498">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7530,7 +7540,7 @@ main {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cac383fe">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8c05963b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7546,7 +7556,7 @@ main {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=822e7222">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7064c940">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7556,7 +7566,7 @@ main {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=daf16de6">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e35f9425">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7601,7 +7611,7 @@ main {
 </div>
 </div>
 </div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d305b2e8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=68b185df">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7619,12 +7629,16 @@ main {
 </div>
 </div>
 </div></div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c13f60e1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=26058402">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Full-Solution">Full Solution<a class="anchor-link" href="#Full-Solution">¶</a></h2><div class="highlight"><pre><span></span><span class="sd">"""romi_test controller."""</span>
+<style>
+pre[class*=python]
+    {font-size: 0.8em;}
+</style>
+<div class="highlight"><pre><span></span><span class="sd">"""romi_test controller."""</span>
 <span class="c1">#import the sys library so we can get path above</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="c1">#add ES302 directory to path because Romi.py is there</span>
@@ -7732,7 +7746,7 @@ main {
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=85dc3aaa">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5a5b1d2a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7742,7 +7756,7 @@ main {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=287048aa">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0be16a93">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7787,7 +7801,7 @@ main {
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ca3835fc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b3b89b61">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7883,7 +7897,7 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=0a55201f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=5cab8372">
 </div></section></section>
 </div>
 </div>
@@ -7921,7 +7935,7 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            var scroll = false
+            var scroll = true
             if (scroll === true) {
               var h = $('.reveal').height() * 0.95;
               $('section.present').find('section')
