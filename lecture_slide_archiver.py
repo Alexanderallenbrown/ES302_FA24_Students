@@ -52,18 +52,21 @@ def set_permissions(path, uid, gid):
 def main():
     last_rel_dir = ''
     findex.write("<h2><u>Released Slides</u></h2>\r\n")
-    source_dir = os.path.abspath(".")
+    source_dir = os.path.abspath("./slides")
     docdir = os.path.relpath("./docs/")
     for root, dirs, files in os.walk(source_dir):
         # dirs.sort(key=lambda word: [alphabet.index(c) for c in word])
         dirs.sort()
+        files.sort(key=lambda word: [alphabet.index(c) for c in word])
 
         for file in files:
             rel_dir = os.path.relpath(root, source_dir)
-            if file.endswith(".ipynb") and not "checkpoint" in file and "slides" in rel_dir:
-                dst = os.path.join(docdir,rel_dir)
+            # if file.endswith(".ipynb") and not "checkpoint" in file and "slides" in rel_dir:
+            if file.endswith(".ipynb") and not "checkpoint" in file:
+
+                dst = os.path.join(docdir,'slides/')
                 # convertcmdpre = "jupyter nbconvert "+"--execute --allow-errors --to html_toc --template templates/source_nb.tpl --output-dir "+dst+" "+os.path.join(rel_dir.replace(" ","\ "),file.replace(" ","\ "))
-                convertcmdpre = "jupyter nbconvert --to slides --SlidesExporter.reveal_scroll=True  --no-input --no-prompt --output-dir " +dst+" "+os.path.join(rel_dir.replace(" ","\ "),file.replace(" ","\ "))
+                convertcmdpre = "jupyter nbconvert --to slides --SlidesExporter.reveal_scroll=True  --no-input --no-prompt --output-dir " +dst+" "+os.path.join(source_dir,rel_dir.replace(" ","\ "),file.replace(" ","\ "))
                 os.system(convertcmdpre)
                 #modify links inside thie html file
                 # Read in the file
@@ -78,7 +81,7 @@ def main():
                     htmlfile.write(filedata)
                 htmlfile.close()
 
-                link = "<a href="+str(os.path.join(rel_dir,file[0:-5]+"slides.html"))+">"+file[0:-6]+"</a>"
+                link = "<a href="+str(os.path.join('slides/',file[0:-5]+"slides.html"))+">"+file[0:-6]+"</a>"
                 findex.write("<p>\r\n")
                 findex.write(link+"\r\n")
                 findex.write("</p>\r\n")
