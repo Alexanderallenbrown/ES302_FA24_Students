@@ -13523,12 +13523,12 @@ That's right. Inverse rotation matrices are simply <em>transposes</em> of one an
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can actually write this even more compactly as a single vector-matrix equation. This requires adding a row to the position vectors, and adding a row and a column to a new "Transformation Matrix" $T$. Shown for a 2D system below, we can write:</p>
 <p>\begin{equation}
-\underbrace{\begin{bmatrix}^A\vec{P} \\ 1\end{bmatrix}}_{^A\vec{P}_h}
+\underbrace{\begin{bmatrix}^A\vec{Q} \\ 1\end{bmatrix}}_{^A\vec{P}_h}
 =
 \underbrace{\left[ \begin{array}{cc|c}
 _B^AR &amp; &amp; ^A\vec{P} \\ \hline
 0&amp; 0&amp; 1
-\end{array}\right]}_{_B^A T} \underbrace{\begin{bmatrix}^B\vec{P} \\ 1\end{bmatrix}}_{^B\vec{P}_h}
+\end{array}\right]}_{_B^A T} \underbrace{\begin{bmatrix}^B\vec{Q} \\ 1\end{bmatrix}}_{^B\vec{P}_h}
 \end{equation}</p>
 </div>
 </div>
@@ -13538,9 +13538,9 @@ _B^AR &amp; &amp; ^A\vec{P} \\ \hline
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This allows the entire transformation to be written simply as:</p>
 <p>\begin{equation}
-^A\vec{P}_h = _B^A T ^B\vec{P}_h
+^A\vec{Q}_h = _B^A T ^B\vec{Q}_h
 \end{equation}</p>
-<p>Where $^A\vec{P}_h$ and $^B\vec{P}_h$ are called <em>homogeneous vectors</em> due to the added "1" as the last row. The same approach can easily be applied to 3D vectors and transformations-- just be sure that the sizes of the "blocks" that make up the <em>homogeneous transformation</em> $_B^A T$ are the correct sizes.</p>
+<p>Where $^A\vec{Q}_h$ and $^B\vec{Q}_h$ are called <em>homogeneous vectors</em> due to the added "1" as the last row. The same approach can easily be applied to 3D vectors and transformations-- just be sure that the sizes of the "blocks" that make up the <em>homogeneous transformation</em> $_B^A T$ are the correct sizes.</p>
 </div>
 </div>
 </div>
