@@ -7498,47 +7498,6 @@ main {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e6b68b5e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h2><p>Modify the Romi controller in the Week05_InClass world. Add a function that computes a new estimate of odometry based on old estimates, along with current wheel velocities. Your function should have the form</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">doOdometry</span><span class="p">(</span><span class="n">Xold</span><span class="p">,</span><span class="n">Yold</span><span class="p">,</span><span class="n">Yawold</span><span class="p">,</span><span class="n">Vl</span><span class="p">,</span><span class="n">Vr</span><span class="p">,</span><span class="n">timestep</span><span class="p">):</span>
-    <span class="c1">#your function should:</span>
-    <span class="c1">#1. Compute yaw rate based on Vl, Vr, and romi geometry</span>
-    <span class="c1">#2. Use Euler integration to find Yawnew based on Yawold, yaw rate and timestep</span>
-    <span class="c1">#3. Compute body-fixed velocity bv based on Vl, Vr, and romi geometry</span>
-    <span class="c1">#4. Rotate body-fixed velocity to find VX, VY in global frame</span>
-    <span class="c1">#5. Use Euler integration to find Xnew, Ynew based on Xold, Yold, VX, Vy, timestep</span>
-    
-    <span class="k">return</span> <span class="n">Xnew</span><span class="p">,</span> <span class="n">Ynew</span><span class="p">,</span> <span class="n">Yawnew</span> <span class="c1">#can return more (i.e. yaw rate) if you like</span>
-</pre></div>
-<p>Remember, Euler integration allows us to compute a "new" value for some integral $y(k)$ based on an "old" value $y(k-1)$, a velocity $\dot{y}(k-1)$, and a timestep $\Delta t$ by:</p>
-<p>\begin{equation}
-y(k) = y(k-1) + \dot{y}(k-1)\Delta t
-\end{equation}</p>
-<p>Which can be written without using indices and without storing our estimates in a "vector" by simply writing:</p>
-<p>\begin{equation}
-y_{new} = y_{old} + \dot{y}_{old}\Delta t
-\end{equation}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4fb241ea">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5c2c241c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7657,6 +7616,47 @@ _A^B R_x (\phi) =
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Limitations-of-Euler-Angles">Limitations of Euler Angles<a class="anchor-link" href="#Limitations-of-Euler-Angles">¶</a></h2><p>Euler angles are one of the most common ways to describe a frame's 3D orientation in space, but they do have limitations. "Gimal lock," or ambiguity resulting from multiple sets of Euler angles describing the same orientation (leaving one of the angles essentially undefined), is a real problem for certain applications. While Euler angles are great for robots whose orientation is relatively constrained to planar motion (think about a car, which only moves a small amount in the pitch and roll directions relative to yaw), they pose challenges for certain applications. This has led to other ways to describe 3D orientations that are able to escape this ambiguity.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e6b68b5e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h2><p>Modify the Romi controller in the Week05_InClass world. Add a function that computes a new estimate of odometry based on old estimates, along with current wheel velocities. Your function should have the form</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">doOdometry</span><span class="p">(</span><span class="n">Xold</span><span class="p">,</span><span class="n">Yold</span><span class="p">,</span><span class="n">Yawold</span><span class="p">,</span><span class="n">Vl</span><span class="p">,</span><span class="n">Vr</span><span class="p">,</span><span class="n">timestep</span><span class="p">):</span>
+    <span class="c1">#your function should:</span>
+    <span class="c1">#1. Compute yaw rate based on Vl, Vr, and romi geometry</span>
+    <span class="c1">#2. Use Euler integration to find Yawnew based on Yawold, yaw rate and timestep</span>
+    <span class="c1">#3. Compute body-fixed velocity bv based on Vl, Vr, and romi geometry</span>
+    <span class="c1">#4. Rotate body-fixed velocity to find VX, VY in global frame</span>
+    <span class="c1">#5. Use Euler integration to find Xnew, Ynew based on Xold, Yold, VX, Vy, timestep</span>
+    
+    <span class="k">return</span> <span class="n">Xnew</span><span class="p">,</span> <span class="n">Ynew</span><span class="p">,</span> <span class="n">Yawnew</span> <span class="c1">#can return more (i.e. yaw rate) if you like</span>
+</pre></div>
+<p>Remember, Euler integration allows us to compute a "new" value for some integral $y(k)$ based on an "old" value $y(k-1)$, a velocity $\dot{y}(k-1)$, and a timestep $\Delta t$ by:</p>
+<p>\begin{equation}
+y(k) = y(k-1) + \dot{y}(k-1)\Delta t
+\end{equation}</p>
+<p>Which can be written without using indices and without storing our estimates in a "vector" by simply writing:</p>
+<p>\begin{equation}
+y_{new} = y_{old} + \dot{y}_{old}\Delta t
+\end{equation}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4fb241ea">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
 </div>
 </div>
 </div>
