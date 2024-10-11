@@ -13414,14 +13414,14 @@ d = \sqrt{^Ax_p^2+^Ay_p^2}
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can then use the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">Law of Cosines</a> to find $\gamma$ based on known lengths $l_1,l_2,d$.</p>
+<p>We can then use the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">Law of Cosines</a> to find $\gamma$ based on known lengths $l_2,l_3,d$.</p>
 <p>The Law of Cosines states:</p>
 <p>\begin{equation}
-d^2 = l_1^2 + l_2^2 - 2l_1l_2 \cos \gamma
+d^2 = l_2^2 + l_3^2 - 2l_2l_3 \cos \gamma
 \end{equation}</p>
 <p>Therefore, $\gamma$ is given by:</p>
 <p>\begin{equation}
-\gamma = \cos^{-1} \left(\frac{1}{2l_1l_2} \left(l_1^2+l_2^2-d^2\right)\right)
+\gamma = \cos^{-1} \left(\frac{1}{2l_2l_3} \left(l_2^2+l_3^2-d^2\right)\right)
 \end{equation}</p>
 </div>
 </div>
@@ -13439,7 +13439,7 @@ d^2 = l_1^2 + l_2^2 - 2l_1l_2 \cos \gamma
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In summary, this gives the following equation for $\theta_2$:</p>
 <p>\begin{equation}
-\theta_2 = \pi - \cos^{-1} \left(\frac{1}{2l_1l_2} \left(l_1^2+l_2^2-\: ^Ax_p^2-\: ^Ay_p^2\right)\right)
+\theta_2 = \pi - \cos^{-1} \left(\frac{1}{2l_2l_3} \left(l_2^2+l_3^2-\: ^Ax_p^2-\: ^Ay_p^2\right)\right)
 \end{equation}</p>
 </div>
 </div>
@@ -13449,11 +13449,11 @@ d^2 = l_1^2 + l_2^2 - 2l_1l_2 \cos \gamma
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>and we can use the same approach to find $\theta_1$ by first finding $\alpha$.</p>
 <p>\begin{equation}
-\alpha = \cos^{-1} \left(\frac{1}{2l_1d} \left(d^2+l_1^2-l_2^2\right)\right)
+\alpha = \cos^{-1} \left(\frac{1}{2l_2d} \left(d^2+l_2^2-l_3^2\right)\right)
 \end{equation}</p>
 <p>Then, using equations 9 and 10, we can find $\theta_1$.</p>
 <p>\begin{equation}
- \theta_1 = \tan^{-1}\frac{^Ay_p}{^Ax_p} - \cos^{-1} \left(\frac{1}{2l_1\sqrt{^Ax_p^2 +\:^Ay_p^2}} \left(^Ax_p^2 +\:^Ay_p^2+l_1^2-l_2^2\right)\right)
+ \theta_1 = \tan^{-1}\frac{^Ay_p}{^Ax_p} - \cos^{-1} \left(\frac{1}{2l_2\sqrt{^Ax_p^2 +\:^Ay_p^2}} \left(^Ax_p^2 +\:^Ay_p^2+l_2^2-l_3^2\right)\right)
 \end{equation}</p>
 </div>
 </div>
