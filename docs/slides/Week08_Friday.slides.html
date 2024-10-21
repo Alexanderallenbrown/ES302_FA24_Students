@@ -7725,7 +7725,7 @@ v_b = \frac{v_L+v_R}{2}
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>As it turns out, this <em>already was</em> a statement of forward differential kinematics (in <em>body-fixed</em> coordinates, rather than task space or allocentric coordinates). Noting that if the radius of the Romi's wheels is $R_w$, $v_R = \omega_R R_w$ and $v_L = \omega_L R_w$, and considering the Romi's configuration space as $\begin{bmatrix} \omega_R &amp; \omega_L\end{bmatrix}^T$, we can write:</p>
 <p>\begin{equation}
-\begin{bmatrix}^B\dot{x} \\ ^B\dot{y} \\ ^B\dot{\psi} \end{bmatrix} = \begin{bmatrix} \frac{R_w}{2} &amp; -\frac{R_w}{2} \\ 0 &amp; 0 \\\frac{R_w}{2r} &amp; -\frac{R_w}{2r} \end{bmatrix}\begin{bmatrix} \omega_R \\ \omega_L\end{bmatrix}
+\begin{bmatrix}^B\dot{x} \\ ^B\dot{y} \\ ^B\dot{\psi} \end{bmatrix} = \begin{bmatrix} \frac{R_w}{2} &amp; \frac{R_w}{2} \\ 0 &amp; 0 \\\frac{R_w}{2r} &amp; -\frac{R_w}{2r} \end{bmatrix}\begin{bmatrix} \omega_R \\ \omega_L\end{bmatrix}
 \end{equation}</p>
 </div>
 </div>
@@ -7757,7 +7757,7 @@ v_b = \frac{v_L+v_R}{2}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>\begin{equation}
-\begin{bmatrix}^A\dot{x} \\ ^A\dot{y} \\ ^A\dot{\psi} \end{bmatrix} = \begin{bmatrix} \frac{R_w\cos\psi}{2} &amp; -\frac{R_w\cos \psi}{2} \\ \frac{R_w\sin\psi}{2} &amp; -\frac{R_w\sin \psi}{2}\\\frac{R_w}{2r} &amp; -\frac{R_w}{2r} \end{bmatrix}\begin{bmatrix} \omega_R \\ \omega_L\end{bmatrix}
+\begin{bmatrix}^A\dot{x} \\ ^A\dot{y} \\ ^A\dot{\psi} \end{bmatrix} = \begin{bmatrix} \frac{R_w\cos\psi}{2} &amp; \frac{R_w\cos \psi}{2} \\ \frac{R_w\sin\psi}{2} &amp; -\frac{R_w\sin \psi}{2}\\\frac{R_w}{2r} &amp; -\frac{R_w}{2r} \end{bmatrix}\begin{bmatrix} \omega_R \\ \omega_L\end{bmatrix}
 \end{equation}</p>
 </div>
 </div>
@@ -7874,7 +7874,7 @@ x_d-x &amp; y_d - y&amp; \cdots &amp; \omega_{nd} - \omega_n
 \end{equation}</p>
 <p>Then, we could make the Romi achieve this goal in its "body-fixed task space" by moving its wheels at:</p>
 <p>\begin{equation}
-\vec{q} = \begin{bmatrix}\omega_R \\ \omega_L\end{bmatrix} = \underbrace{\begin{bmatrix} \frac{R_w}{2} &amp; -\frac{R_w}{2} \\ 0 &amp; 0 \\\frac{R_w}{2r} &amp; -\frac{R_w}{2r} \end{bmatrix}^+}_{J^+}\underbrace{\begin{bmatrix}U - ^B\dot{x} \\ 0 - ^B\dot{y} \\  \frac{U}{R}-^B\dot{\psi}\end{bmatrix}}_{\vec{e}}
+\vec{q} = \begin{bmatrix}\omega_R \\ \omega_L\end{bmatrix} = \underbrace{\begin{bmatrix} \frac{R_w}{2} &amp; \frac{R_w}{2} \\ 0 &amp; 0 \\\frac{R_w}{2r} &amp; -\frac{R_w}{2r} \end{bmatrix}^+}_{J^+}\underbrace{\begin{bmatrix}U  \\ 0  \\  \frac{U}{R}\end{bmatrix}}_{\vec{\mathcal{V}}_b}
 \end{equation}</p>
 </div>
 </div>
