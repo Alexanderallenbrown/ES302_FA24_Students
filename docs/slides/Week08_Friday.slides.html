@@ -7842,7 +7842,7 @@ x_d-x &amp; y_d - y&amp; \cdots &amp; \omega_{nd} - \omega_n
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Then we can progressively drive a robot's end effector towards the goal using the pseudoinverse of its Jacobian matrix:</p>
 <p>\begin{equation}
-\vec{q} = J^+ e
+\dot{\vec{q}}= J^+ e
 \end{equation}</p>
 <p>As error gets smaller, the robot will move more and more slowly and (hopefully) approach the goal.</p>
 </div>
@@ -7870,11 +7870,11 @@ x_d-x &amp; y_d - y&amp; \cdots &amp; \omega_{nd} - \omega_n
 \end{equation}</p>
 <p>This means that we could specify a "goal" for the Romi's body-fixed task space as:</p>
 <p>\begin{equation}
-\vec{q}_g = \begin{bmatrix}^B\dot{x}_g &amp; ^B\dot{y}_g &amp; ^B\dot{\psi}_g\end{bmatrix}=\begin{bmatrix}U &amp; 0 &amp;  \frac{U}{R}\end{bmatrix}
+\dot{\vec{q}_g} = \begin{bmatrix}^B\dot{x}_g &amp; ^B\dot{y}_g &amp; ^B\dot{\psi}_g\end{bmatrix}=\begin{bmatrix}U &amp; 0 &amp;  \frac{U}{R}\end{bmatrix}
 \end{equation}</p>
 <p>Then, we could make the Romi achieve this goal in its "body-fixed task space" by moving its wheels at:</p>
 <p>\begin{equation}
-\vec{q} = \begin{bmatrix}\omega_R \\ \omega_L\end{bmatrix} = \underbrace{\begin{bmatrix} \frac{R_w}{2} &amp; \frac{R_w}{2} \\ 0 &amp; 0 \\\frac{R_w}{2r} &amp; -\frac{R_w}{2r} \end{bmatrix}^+}_{J^+}\underbrace{\begin{bmatrix}U  \\ 0  \\  \frac{U}{R}\end{bmatrix}}_{\vec{\mathcal{V}}_b}
+\dot{\vec{q}} = \begin{bmatrix}\omega_R \\ \omega_L\end{bmatrix} = \underbrace{\begin{bmatrix} \frac{R_w}{2} &amp; \frac{R_w}{2} \\ 0 &amp; 0 \\\frac{R_w}{2r} &amp; -\frac{R_w}{2r} \end{bmatrix}^+}_{J^+}\underbrace{\begin{bmatrix}U  \\ 0  \\  \frac{U}{R}\end{bmatrix}}_{\vec{\mathcal{V}}_b}
 \end{equation}</p>
 </div>
 </div>
