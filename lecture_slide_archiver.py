@@ -54,6 +54,8 @@ def main():
     findex.write("<h2><u>Released Slides</u></h2>\r\n")
     source_dir = os.path.abspath("./slides")
     docdir = os.path.relpath("./docs/")
+    # shutil.copytree("slides/figures/*.png","docs/slides/figures/")
+    shutil.copytree("slides/figures/","docs/slides/figures/",dirs_exist_ok=True)
     for root, dirs, files in os.walk(source_dir):
         # dirs.sort(key=lambda word: [alphabet.index(c) for c in word])
         dirs.sort()
